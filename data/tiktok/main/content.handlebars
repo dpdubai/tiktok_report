@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" defer>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;300;400;500&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@300;400;500;700;900&display=swap" 
+    rel="stylesheet">    
+    <title>TikTok Report</title>
+    <style>
+        {#asset bootstrap.css @encoding=utf8}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .hide_this {
+            display: none !important;
+        }
+        html {
+            background-color: white;
+            height: 100%;
+        }
+        body {
+            background-color: white;
+        }
+
+        /* frontpage */
+        @page {
+            margin: -10px;
+        }
+
+        .frontpage {
+        }
+
+        .front-page-img {
+            width: 100%;
+        }
+
+        .date-time-container {
+            z-index: 2;
+            bottom: 3rem;
+            left: 3.05rem;
+            font-size: 1.1rem;
+            color: lightgray;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .date-time {
+            font-size: 1rem;
+        }
+        /* frontpage ends */
+
+        /* main-content */
+        .title-family {
+            font-family: 'Bebas Neue', cursive;
+        }
+        .roboto-condensed-family {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: bold;
+        }
+        .roboto-family {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .poppins-family {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .custom-border {
+            border: 3px solid #343a40;
+        }
+
+        .text-coldblack {
+            color: #343a40;
+        }
+
+        .text-gray {
+            color: #818181;
+        }
+
+        .text-semigray {
+            color: #c7c7c7;
+        }
+
+        .text-tealblue {
+            color: #556ee6;
+        }
+
+        .text-lightgreen {
+            color: #34c38f;
+        }
+
+        .bg-lightgray {
+            background-color: #f2f2f2;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+        
+        img.image {
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+        }
+
+        .target-img-container {
+            height: auto;
+            max-height: 350px;
+        }
+
+        hr:not(.default) {
+            border-width: 1.8px;
+            border-color: #343a40;
+            opacity: 1;
+        }
+
+        hr.default {
+            border-color: rgba(0,0,0,0.15);
+            opacity: 1;
+            border-top-width: 1px !important;
+            border-bottom-width: 0 !important;
+        }
+
+        .custom-shadow {
+            box-shadow: 0px 4px 10px rgba(110, 110, 110, 0.15);
+        }
+
+        .custom-radius {
+            border-radius: 7px;
+        }
+
+        .lowest-radius {
+            border-radius: 4px;
+        }
+
+        .custom-card-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+           
+        }
+
+        .custom-card {
+            /* width: 30%; */
+
+        }
+
+        .card-image-container {
+        }
+
+        .h-11_5rem {
+            height: 11.5rem;
+        }
+
+        .card-image-container img.image {
+            object-fit: unset;
+            /* object-position: top; */
+
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .profile-avatar {
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 3rem;
+            /* border: 0.08rem solid white; */
+            box-shadow: 0 0 0 0.1rem white;
+        }
+
+        .wh-1rem {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .wh-1_3rem {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+
+        .wh-1_5rem {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .wh-2rem {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        text-black {
+            color: black;
+        }
+
+        a.custom-link {
+            text-decoration: none;
+        }
+
+        .fs-2_5rem {
+            font-size: 2.5rem;
+        }
+
+        .fs-2rem {
+            font-size: 2rem;
+        }
+
+        .fs-1rem {
+            font-size: 1rem;
+        }
+
+        .fs-12 {
+            font-size: 12px;
+        }
+
+        .fs-10 {
+            font-size: 10px;
+        }
+
+        .fs-9 {
+            font-size: 9px;
+        }
+
+        .fs-8_5 {
+            font-size: 8.5px;
+        }
+
+        .fs-8 {
+            font-size: 8px;
+        }
+
+        .fs-7 {
+            font-size: 7px;
+        }
+
+        .fs-6px {
+            font-size: 6px;
+        }
+        .fs-1_8rem {
+            font-size: 1.8rem;
+        }
+        /* main-content-ends */
+    </style>
+</head>
+<body class="bg-white">
+    {{!-- frontpage --}}
+    <main class="frontpage overflow-hidden position-relative">
+        <img src="{#asset frontpage_{{./system}}.png @encoding=dataURI}" class="front-page-img" style="">
+        <div class="position-absolute date-time-container">
+            <div class="me-2">Report Generated on</div>
+            <div class="date-time text-light">{{ getlatestdate }}&nbsp;{{ getlatesttime }}</div>
+        </div>
+    </main>
+    
+    {{!-- main content --}}
+    {{#if_eq type 'hashtag'}}
+    <div style="page-break-after: alwasys;bg-dark"></div>
+    <div class="main-container bg-white">
+        <img class="m-0 p-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3 m-0" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">TARGET HASHTAG</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full" style="padding: 0 1rem;">
+                <div class="d-flex mt-4 w-full">
+                    <div  class="col-5 p-0 ps-3 h-full d-flex flex-column justify-content-end title-family">
+                        <div class="w-full my-2 d-flex align-items-center">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:30px; height:30px; background: #ebe7e7;">
+                                {{#includes hashtag '#'}}
+                                <img src="{#asset images/hashtag.svg @encoding=link}" class="" style="width: 20px;"/>
+                                {{else}}
+                                <img src="{#asset images/keyword.svg @encoding=link}" class="" style="width: 20px;"/>
+                                {{/includes}}
+                            </div>
+                            <h1 class="ms-2 lh-0 text-coldblack mb-0">{{replace hashtag '#' ''}}</h1>
+                        </div>
+                        <hr class="mb-0"></hr>
+                    </div>
+                    <div class="col-7 p-0 d-flex align-items-center overflow-hidden target-img-container">
+                        {{!-- <img class="image target-img h-full" src="{{image}}" /> --}}
+                    </div>
+                </div>
+                <br></br>
+                <div class="row roboto-family px-2">
+                    <div class="col-3">
+                        <h6 class="text-gray mb-0" style="font-weight: 400;">Contributors</h6>
+                        <h1 class="text-coldblack fs-2rem" style="font-weight: 900;">{{parse_int about.[0]._source.user_count}}</h1>
+                    </div>
+                    <div class="col-3">
+                        <h6 class="text-gray mb-0" style="font-weight: 400;">Views</h6>
+                        <h1 class="text-coldblack fs-2rem" style="font-weight: 900;">{{parse_int about.[0]._source.view_count}}</h1>
+                    </div>
+                    {{!-- <div class="col-3">
+                        <h6 class="text-gray mb-0" style="font-weight: 400;">Visage Contacts</h6>
+                        <h1 class="text-coldblack fs-2rem" style="font-weight: 900;">{{all_len contri_contributors.series}}</h1>
+                    </div> --}}
+                    <div class="col-3">
+                        <h6 class="text-gray mb-0" style="font-weight: 400;">Used Hashtag</h6>
+                        <h1 class="text-coldblack fs-2rem" style="font-weight: 900;">{{parse_int about.[0]._source.use_count}}</h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {{!-- Videos --}}
+        {{#if videos.length}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Videos</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each videos}}
+                    {{#if _source}}
+                    <div style="display:block;overflow: hidden;" class="custom-radius custom-shadow">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius">
+                            <a href="https://tiktok.com/@{{_source.username}}/video/{{_source.id}}" target="_blank" class="custom-card-inner" style="display:block;padding: 0.4rem;text-decoration:none;margin:0;">
+                                <div class="card-image-container position-relative" style="height: 10.5rem">
+                                    <img class="image custom-radius" src="{{resolveImg _source.thumb}}" onerror="this.src='{#asset no-image.png @encoding=dataURI}';this.setAttribute('style','object-fit: cover;');"/>
+                                </div>
+                                <div class="custom-card-content">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="m-0 lh-0 font-weight-bold text-coldblack fs-9" style="font-weight: 600;">{{trim _source.desc 35}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center lowest-radius">
+                                            <i class="lh-0 bi bi-eye fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.play_count}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-coldblack font-weight-normal fs-9">{{trim _source.desc 85}}</div>
+                                    <hr class="default mb-0 mt-2" />
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-hand-thumbs-up fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.digg_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-chat fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.comment_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-share fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.share_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-whatsapp fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.whatsapp_share_count}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {{/if}}
+                {{#if_end @index 9 9}}
+                {{#if_noteq @index ../videos.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+        {{!-- Contributors --}}
+        <div style="page-break-after: always;"></div>
+        <main class="px-3 user_chart_contri">
+            <div id="contri_contributors" class="mt-5" style="width: 790px;height:100%;"></div>
+            <div style="page-break-after: always;"></div>
+        </main>
+
+        {{#if (and contributors contributors.length)}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Contributors</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each contributors}}
+                    <div style="display:block;">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius custom-shadow">
+                            <div class="custom-card-inner position-relative" style="padding: 0.4rem;">
+                                <div class="card-image-container mt-2 d-flex flex-column align-items-center">
+                                    <img class="profile-avatar" src="{{resolveImg _source.profile_image}}" onerror="this.src='{#asset avatar.png @encoding=dataURI}'"/>
+                                    <a href="https://tiktok.com/@{{_source.username}}" target="_blank" class="m-0 lh-0 font-weight-bold text-coldblack fs-9 mt-2 text-decoration-none" style="font-weight: 500;">{{parseString _source.name}}</a>
+                                    <div class="text-gray font-weight-normal fs-9">@{{_source.username}}</div>
+                                    {{#if_eq ../visage true}}
+                                        <div class="text-gray mt-1 font-weight-normal fs-10">{{fallback _source.phone_number}}</div>
+                                    {{else}}
+                                        <div class="text-gray mt-1 font-weight-normal fs-10"> </div>
+                                    {{/if_eq}}
+                                </div>
+                                {{#if ../visage}}
+                                    <img src="{{genUrl _source.phone_number}}" onerror="this.remove()" class="rounded-circle" style="width: 22px;height:22px;position: absolute;right: 1rem;top:8px;" />
+                                {{/if}}
+                                <hr class="default mb-2 mt-3" />
+                                 <div class="custom-card-content">
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.follower_count}}</div>
+                                            <div class="fs-8 text-gray">Followers</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.following_count}}</div>
+                                            <div class="fs-8 text-gray">Following</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.total_videos}}</div>
+                                            <div class="fs-8 text-gray">Videos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{#if_end @index 12 12}}
+                {{#if_noteq @index ../contributors.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+        {{!-- statistics --}}
+        <div class="analytics-container" style="page-break-after: always;"></div>
+        <img class="m-0 analytics-container" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <div class="w-full analytics-container">
+            <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">STATISTICS</h1>
+            <hr class="mt-0"></hr>
+        </div>
+        <main class="mt-2 analytics-container">
+            <div class="px-3 w-full">
+                <div id="tag_cloud_popular" class="mt-1 user_chart_wc_hashtag" style="width: 790px;"></div>
+                <div id="contributors_chart" class="user_chart_contributor" style="width: 790px;height:100%;"></div>
+            </div>
+            <div class="timeline_chart_1" style="page-break-after: always;"></div>
+            <div class="px-3 w-full">
+                <img class="m-0 timeline_chart_1" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+                <div id="year_chart" class="mt-5 timeline_chart_1" style="width: 790px;height:100%;"></div>
+                <div id="month_chart" class="mt-5 timeline_chart_1" style="width: 790px;height:100%;"></div>
+            </div>
+            <div class="timeline_chart_2" style="page-break-after: always;"></div>
+            <div class="px-3 w-full">
+                <img class="m-0 timeline_chart_2" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+                <div id="date_chart" class="mt-5 timeline_chart_2" style="width: 790px;height:100%;"></div>
+                <div id="week_chart" class="mt-5 timeline_chart_2" style="width: 790px;height:100%;"></div>
+            </div>
+        </main>
+    </div>
+    {{/if_eq}}
+
+    {{#if_eq type 'profile'}}
+    <div style="page-break-after: alwasys;bg-dark"></div>
+    <div class="main-container bg-white">
+        <img class="m-0 p-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3 m-0" style="margin-top: -2rem;">
+            {{!-- <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">TARGET profile</h1>
+                <hr class="mt-0"></hr>
+            </div> --}}
+            <div class="w-full" style="padding: 0 1rem;">
+                <div class="p-0 d-flex align-items-center position-relative target-img-container">
+                    <img class="image w-full" style="object-fit:cover;margin-bottom:0;" src="{#asset images/tiktok-banner.png @encoding=link}" />
+                    <style>
+                        .profile-overlay {
+                            position: absolute;
+                            left: 40px;
+                            bottom: -40px;
+                        }
+                        .fs-1_35rem {
+                            font-size: 1.35rem;
+                        }
+                        .fs-1_2rem {
+                            font-size: 1.1rem;
+                        }
+                        .fs-1_25rem {
+                            font-size: 1.25rem;
+                        }
+                        .fs-0_8rem {
+                            font-size: 0.8rem;
+                        }
+                        .fs-0_9rem {
+                            font-size: 0.9rem;
+                        }
+                        .whitespace-nowrap {
+                            white-space: nowrap;
+                        }
+                        .about-item-container {
+                            width: 100%;
+                        }
+                    </style>
+                    
+                    <div class="profile-overlay">
+                        <div class="d-flex">
+                            <img class="image target-img h-full rounded-circle border" 
+                                style="width:90px;height:90px;object-fit:cover;background-color:white;" 
+                                    src="{{resolveImg about.profile_image}}" onerror='this.src="{#asset avatar.png @encoding=dataURI}"' />
+                            <div class="ms-3">
+                                <h1 class="text-white fs-1_25rem mt-0 mb-0">{{parseString about.name}}</h1>
+                                <p class="fs-1rem text-semigray roboto-family font-weight-normal">@{{about.username}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex roboto-family justify-content-between px-2 mt-3" style="margin-left: 8.8rem;">
+                    <div class=" text-left d-flex">
+                        <h6 class="text-gray fs-0_9rem mb-0 me-2" style="font-weight: 400;">Followers:</h6>
+                        <h1 class="text-coldblack fs-0_9rem m-0" style="font-weight: 500;">{{parse_int about.follower_count}}</h1>
+                    </div>
+                    <div class=" text-left d-flex">
+                        <h6 class="text-gray fs-0_9rem mb-0 me-2" style="font-weight: 400;">Following:</h6>
+                        <h1 class="text-coldblack fs-0_9rem m-0" style="font-weight: 500;">{{parse_int about.following_count}}</h1>
+                    </div>
+                    <div class=" text-left d-flex">
+                        <h6 class="text-gray fs-0_9rem mb-0 me-2" style="font-weight: 400;">Videos:</h6>
+                        <h1 class="text-coldblack fs-0_9rem m-0" style="font-weight: 500;">{{parse_int about.video_count}}</h1>
+                    </div>
+                    <div class=" text-left d-flex">
+                        <h6 class="text-gray fs-0_9rem mb-0 me-2" style="font-weight: 400;">Likes:</h6>
+                        <h1 class="text-coldblack fs-0_9rem m-0" style="font-weight: 500;">{{parse_int about.likes}}</h1>
+                    </div>
+                </div>
+                
+                {{!-- <h1 class="text-left py-2 mb-0 mt-3 text-coldblack fs-1_5rem title-family">About</h1> --}}
+                <div class="mt-2 w-full">
+                    <div class="p-0 px-3 w-full overflow-hidden h-full d-flex flex-column justify-content-end title-family">
+                        <div class="w-full my-2 roboto-family">
+                            <div class="about-item-container whitespace-nowrap">
+                                <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Contact:</h6>
+                                <p class="fs-1rem m-0 mt-1 text-coldblack font-weight-normal">{{fallback about.phone_number}}</p>
+                            </div>
+                            <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                            {{#if about.desc}}
+                            <div class="about-item-container whitespace-nowrap mt-2">
+                                <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Bio:</h6>
+                                <p class="fs-1rem m-0 mt-1 text-coldblack font-weight-normal">{{parseString about.desc}}</p>
+                            </div>
+                            <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                            {{/if}}
+                            {{#if about.bio_link}}
+                            <div class="about-item-container whitespace-nowrap mt-2">
+                                <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Bio Link:</h6>
+                                <a class="fs-1rem text-decoration-none m-0 mt-1 text-tealblue font-weight-normal" href="{{url about.bio_link}}" target="_blank">{{about.bio_link}}</a>
+                            </div>
+                            <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                            {{/if}}
+                            
+                            {{#if (and about.email_address about.email_address.length)}}
+                            <div class="about-item-container whitespace-nowrap mt-2">
+                                <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Email:</h6>
+                                <div class="mt-1">
+                                    {{#each about.email_address}}
+                                        <p class="fs-1rem m-0 text-coldblack font-weight-normal">{{fallback this}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                            {{/if}}
+
+                            {{#if (and about.social_accounts about.social_accounts.length)}}
+                                {{#each about.social_accounts}}
+                                    <div class="about-item-container whitespace-nowrap mt-2">
+                                        <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">{{platform}}:</h6>
+                                        <a class="fs-1rem text-decoration-none m-0 mt-1 text-tealblue font-weight-normal" href="{{url link}}" target="_blank">{{fall_back title link}}</a>
+                                    </div>
+                                    <hr style="border-color: rgba(0,0,0,0.05)"></hr>
+                                {{/each}}
+                            {{/if}}
+                            {{#if (and about.other_link about.other_link.length)}}
+                            <div class="about-item-container whitespace-nowrap mt-2">
+                                <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Other Links:</h6>
+                                <div class="mt-1">
+                                    {{#each about.other_link}}
+                                        <a class="fs-1rem d-block text-decoration-none m-0 text-tealblue font-weight-normal" href="{{url this}}" target="_blank">{{this}}</a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </main>
+        
+        {{#if (or about.biz_account_info about.bio_email)}}
+            {{#if (or about.biz_account_info.android_download_app_link about.biz_account_info.ios_download_app_link about.bio_email (and about.biz_account_info.rba_user_info about.biz_account_info.rba_user_info.company_name))}}
+            <div style="page-break-after: always;"></div>
+            <img class="m-0 p-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Other Info</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <main class="px-3 m-0" style="margin-top: -2rem">
+                <div class="w-full" style="padding: 0 1rem;">
+                    <div class="mt-2 w-full">
+                        <div class="p-0 px-3 w-full overflow-hidden h-full d-flex flex-column justify-content-end title-family">
+                            <div class="w-full my-2 roboto-family">
+                                {{#if (and about.biz_account_info.rba_user_info about.biz_account_info.rba_user_info.company_name)}}
+                                <div class="about-item-container whitespace-nowrap mt-2">
+                                    <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Company Name:</h6>
+                                    <p class="fs-1rem m-0 mt-1 text-coldblack font-weight-normal">{{parseString about.biz_account_info.rba_user_info.company_name}}</p>
+                                </div>
+                                <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                                {{/if}}
+                                {{#if about.bio_email}}
+                                <div class="about-item-container whitespace-nowrap mt-2">
+                                    <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Bio Email:</h6>
+                                    <p class="fs-1rem m-0 mt-1 text-coldblack font-weight-normal">{{parseString about.bio_email}}</p>
+                                </div>
+                                <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                                {{/if}}
+                                {{#if about.biz_account_info.android_download_app_link}}
+                                <div class="about-item-container whitespace-nowrap mt-2">
+                                    <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">Android App Link:</h6>
+                                    <a class="fs-1rem text-decoration-none m-0 mt-1 text-tealblue font-weight-normal" href="{{url about.biz_account_info.android_download_app_link}}" target="_blank">{{about.biz_account_info.android_download_app_link}}</a>
+                                </div>
+                                <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                                {{/if}}
+                                {{#if about.biz_account_info.ios_download_app_link}}
+                                <div class="about-item-container whitespace-nowrap mt-2">
+                                    <h6 class="text-coldblack fs-1rem m-0 me-3" style="font-weight: 400;">IOS App Link:</h6>
+                                    <a class="fs-1rem text-decoration-none m-0 mt-1 text-tealblue font-weight-normal" href="{{url about.biz_account_info.ios_download_app_link}}" target="_blank">{{about.biz_account_info.ios_download_app_link}}</a>
+                                </div>
+                                <hr style="border-color: rgba(0,0,0,0.15)"></hr>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            {{/if}}
+        {{/if}}
+        
+        {{!-- Videos --}}
+        {{#if (and posts posts.hits posts.hits.hits posts.hits.hits.length)}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Videos</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each posts.hits.hits}}
+                    {{#if _source}}
+                    <div style="display:block;overflow: hidden;" class="custom-radius custom-shadow">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius">
+                            <a href="https://tiktok.com/@{{../about.username}}/video/{{_source.unique_id}}" target="_blank" class="custom-card-inner" style="display:block;padding: 0.4rem;text-decoration:none;margin:0;">
+                                <div class="card-image-container position-relative" style="height: 10.5rem">
+                                    <img class="image custom-radius" src="{{resolveImg _source.thumb}}" onerror="this.src='{#asset no-image.png @encoding=dataURI}';this.setAttribute('style','object-fit: cover;');"/>
+                                </div>
+                                <div class="custom-card-content">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="m-0 lh-0 font-weight-bold text-coldblack fs-9" style="font-weight: 600;">{{trim _source.desc 35}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center lowest-radius">
+                                            <i class="lh-0 bi bi-eye fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.play_count}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-coldblack font-weight-normal fs-9">{{trim _source.desc 85}}</div>
+                                    <hr class="default mb-0 mt-2" />
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-hand-thumbs-up fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.digg_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-chat fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.comment_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-share fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.share_count}}</div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="lh-0 bi bi-whatsapp fs-9 text-coldblack"></i>&nbsp;
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.statistics.whatsapp_share_count}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {{/if}}
+                {{#if_end @index 9 9}}
+                {{#if_noteq @index ../posts.hits.hits.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+        {{!-- Followers --}}
+        <div class="user_chart_contri_followers" style="page-break-after: always;"></div>
+        <img class="m-0 user_chart_contri_followers" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3 user_chart_contri_followers">
+            <div id="country_follower" class="mt-5" style="width: 790px;height:100%;"></div>
+        </main>
+        {{#if (and followers followers.length)}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Followers</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each followers}}
+                    <div style="display:block;">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius custom-shadow">
+                            <div class="custom-card-inner position-relative" style="padding: 0.4rem;">
+                                <div class="card-image-container mt-2 d-flex flex-column align-items-center">
+                                    <img class="profile-avatar" src="{{resolveImg picture_link}}" onerror="this.src='{#asset avatar.png @encoding=dataURI}'"/>
+                                    <a href="{{profile}}" target="_blank" class="m-0 lh-0 font-weight-bold text-coldblack fs-9 mt-2 text-decoration-none" style="font-weight: 500;">{{parseString name}}</a>
+                                    <div class="text-gray font-weight-normal fs-9">@{{screen_name}}</div>
+                                    {{#if ../visage}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10">{{fallback phone_number}}</div>
+                                    {{else}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10"> </div>
+                                    {{/if}}
+                                </div>
+                                {{#if ../visage}}
+                                    <img src="{{genUrl phone_number}}" onerror="this.remove()" class="rounded-circle" style="width: 22px;height:22px;position: absolute;right: 1rem;top:8px;" />
+                                {{/if}}
+                                <hr class="default mb-2 mt-3" />
+                                 <div class="custom-card-content">
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int follower_count}}</div>
+                                            <div class="fs-8 text-gray">Followers</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int friend_count}}</div>
+                                            <div class="fs-8 text-gray">Following</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int status_count}}</div>
+                                            <div class="fs-8 text-gray">Videos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{#if_end @index 12 12}}
+                {{#if_noteq @index ../followers.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+
+        {{!-- Followings --}}
+        <div class="user_chart_contri_following" style="page-break-after: always;"></div>
+        <img class="m-0 user_chart_contri_following" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3 user_chart_contri_following">
+            <div id="country_following" class="mt-5" style="width: 790px;height:100%;"></div>
+        </main>
+
+        {{#if (and follows follows.length)}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Followings</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each follows}}
+                    <div style="display:block;">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius custom-shadow">
+                            <div class="custom-card-inner position-relative" style="padding: 0.4rem;">
+                                <div class="card-image-container mt-2 d-flex flex-column align-items-center">
+                                    <img class="profile-avatar" src="{{resolveImg picture_link}}" onerror="this.src='{#asset avatar.png @encoding=dataURI}'"/>
+                                    <a href="{{profile}}" target="_blank" class="m-0 lh-0 font-weight-bold text-coldblack fs-9 mt-2 text-decoration-none" style="font-weight: 500;">{{parseString name}}</a>
+                                    <div class="text-gray font-weight-normal fs-9">@{{screen_name}}</div>
+                                    {{#if ../visage}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10">{{fallback phone_number}}</div>
+                                    {{else}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10"> </div>
+                                    {{/if}}
+                                </div>
+                                {{#if ../visage}}
+                                    <img src="{{genUrl phone_number}}" onerror="this.remove()" class="rounded-circle" style="width: 22px;height:22px;position: absolute;right: 1rem;top:8px;" />
+                                {{/if}}
+                                <hr class="default mb-2 mt-3" />
+                                 <div class="custom-card-content">
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int follower_count}}</div>
+                                            <div class="fs-8 text-gray">Followers</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int friend_count}}</div>
+                                            <div class="fs-8 text-gray">Following</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int status_count}}</div>
+                                            <div class="fs-8 text-gray">Videos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{#if_end @index 12 12}}
+                {{#if_noteq @index ../follows.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+        {{!-- Contributors --}}
+        <div class="user_chart_contri" style="page-break-after: always;"></div>
+        <img class="m-0 user_chart_contri" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3 user_chart_contri">
+            <div id="contri_contributors" class="mt-5" style="width: 790px;height:100%;"></div>
+        </main>
+
+        {{#if (and contributors contributors.length)}}
+        <div style="page-break-after: always;"></div>
+        <img class="m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <main class="px-3" style="margin-top: -2rem;">
+            <div class="w-full">
+                <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">Contributors</h1>
+                <hr class="mt-0"></hr>
+            </div>
+            <div class="w-full px-3 mt-2">
+                <div class="w-full custom-card-container position-relative poppins-family" id="video-{{@index}}">
+                    {{#each contributors}}
+                    <div style="display:block;">
+                        <div class="custom-card m-0 p-0 gap-1 custom-radius custom-shadow">
+                            <div class="custom-card-inner position-relative" style="padding: 0.4rem;">
+                                <div class="card-image-container mt-2 d-flex flex-column align-items-center">
+                                    <img class="profile-avatar" src="{{resolveImg _source.profile_image}}" onerror="this.src='{#asset avatar.png @encoding=dataURI}'"/>
+                                    <a href="https://tiktok.com/@{{_source.screen_name}}" target="_blank" class="m-0 lh-0 font-weight-bold text-coldblack fs-9 mt-2 text-decoration-none" style="font-weight: 500;">{{parseString _source.name}}</a>
+                                    <div class="text-gray font-weight-normal fs-9">@{{_source.screen_name}}</div>
+                                    {{#if ../visage}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10">{{fallback _source.phone_number}}</div>
+                                    {{else}}
+                                    <div class="text-gray mt-1 font-weight-normal fs-10"> </div>
+                                    {{/if}}
+                                </div>
+                                {{#if ../visage}}
+                                    <img src="{{genUrl _source.phone_number}}" onerror="this.remove()" class="rounded-circle" style="width: 22px;height:22px;position: absolute;right: 1rem;top:8px;" />
+                                {{/if}}
+                                <hr class="default mb-2 mt-3" />
+                                 <div class="custom-card-content">
+                                    <div class="text-gray d-flex justify-content-between align-items-center mx-2">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.follower_count}}</div>
+                                            <div class="fs-8 text-gray">Followers</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.following_count}}</div>
+                                            <div class="fs-8 text-gray">Following</div>
+                                        </div>
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="lh-0 m-0 font-weight-bold fs-9 text-coldblack" style="font-weight: 500;">{{parse_int _source.total_videos}}</div>
+                                            <div class="fs-8 text-gray">Videos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{#if_end @index 12 12}}
+                {{#if_noteq @index ../contributors.length}}
+                </div>
+                <div style="page-break-after: always;"></div>
+                <div class="d-flex justify-content-center" style="width:100%;overflow:visible;">
+                    <img class="header-img" src="{#asset header_{{../system}}.png @encoding=dataURI}" style="width:calc(100% + 3rem);margin-left:-1rem;margin-right:-1rem;"/>
+                </div>
+                <div class="w-full custom-card-container position-relative poppins-family"
+                    style="margin-top: 1rem;">
+                {{/if_noteq}}
+                {{/if_end}}
+                {{/each}}
+                </div>
+            </div>
+        </main>
+        {{/if}}
+
+        {{!-- statistics --}}
+        <div class="analytics-container" style="page-break-after: always;"></div>
+        <img class="m-0 analytics-container" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+        <div class="w-full analytics-container">
+            <h1 class="text-center py-2 mb-0 text-coldblack fs-2rem title-family">STATISTICS</h1>
+            <hr class="mt-0"></hr>
+        </div>
+        <main class="mt-3 analytics-container">
+            <div class="px-3 w-full">
+                <div id="tag_cloud_popular" class="mt-1 user_chart_wc_hashtag" style="width: 790px;"></div>
+                <hr class="user_chart_wc_comment mt-0" style="border-color: #a1a1a1;"/>
+                <div id="comment_cloud_popular" class="mt-2 user_chart_wc_comment" style="width: 790px;"></div>
+            </div>
+            <div class="timeline_chart_1" style="page-break-after: always;"></div>
+            <div class="px-3 w-full">
+                <img class="m-0 timeline_chart_1" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+                <div id="year_chart" class="mt-5 timeline_chart_1" style="width: 790px;height:100%;"></div>
+                <div id="month_chart" class="mt-5 timeline_chart_1" style="width: 790px;height:100%;"></div>
+            </div>
+            <div class="timeline_chart_2" style="page-break-after: always;"></div>
+            <div class="px-3 w-full">
+                <img class="m-0 timeline_chart_2" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+                <div id="date_chart" class="mt-5 timeline_chart_2" style="width: 790px;height:100%;"></div>
+                <div id="week_chart" class="mt-5 timeline_chart_2" style="width: 790px;height:100%;"></div>
+            </div>
+            <div class="user_chart_contributor" style="page-break-after: always;"></div>
+            <img class="m-0 user_chart_contributor" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+            <div class="px-3 w-full user_chart_contributor">
+                <div id="contributors_chart" class="user_chart_contributor" style="width: 790px;height:100%;"></div>
+                
+            </div>
+        </main>
+        
+    </div>
+    {{/if_eq}}
+
+    <div class="static_map_container" style="page-break-after: always;"></div>
+    <img class="static_map_container m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>
+    <h1 class="static_map_container text-center py-2 mb-0 text-coldblack fs-2rem title-family">PIN LOCATIONS</h1>
+    <hr class="static_map_container mt-0"></hr>
+    <main class="static_map_container mt-5 w-full overflow-hidden" id="static_map_container">
+        
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts.js" integrity="sha512-4vR+i8ttbNS8jZFKX9/5NS7/1h0GcJChrhguf3ypa3Vd3AdwncH1Yt6zB+Z+sVL1KVq3tuRAgTJnttWcb75FTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts-3d.min.js" integrity="sha512-Cs3Zua7q0Wulkiw2OVJfchAy6SSJVfcBAtNwJ+GKhauugHzrisS4FhMRArNm54TUPQiCqGR/dS8MBHe/IGtABw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts-more.min.js" integrity="sha512-S3pQ5pL4+s/H/v1gQtD8wKFpW+itPKs6HlvlW9hqwhR52y+FJKzmi7SNKhH7I0qMe5cPeWunRjV1gtNcjFKMYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/modules/solid-gauge.min.js" integrity="sha512-Z+0MjRfNOoXgoPnIrWr27ZD4askEkClsOmVXymR+dmOx+dnRN4cis9SU12QbasBWg+CaEa1LG0oCB1L3sJrShg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/modules/wordcloud.min.js" integrity="sha512-Bwz7wJZrw2SfhdII9jYSp/KK5uKAC57FcwQSP5AMdSBVRRfE6ySZf5695DHNrBiZxteDmxKW8tIfdP1viM86+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>var analytics_flag = false;</script>
+
+    <script>
+          function adjustCloud(data2) {
+            var dataList = [];
+            var max = data2[0].weight;
+            if (data2.length > 60) {
+
+            for (var i = 0; i < 60; i++) {
+                var count = 0;
+                var abc = (data2[i].weight / max);
+                count = parseInt(abc) * 100;
+
+                // //console.log("Name: "+data2[i].name+" Weight: "+ count);
+
+                var json = {};
+                if (i == 0) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": 100
+                }
+                }
+                else if (count <= 40) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 20
+                }
+                }
+                else if (count <= 60) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 15
+                }
+                }
+                else if (count <= 80) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 10
+                }
+                }
+                else if (count <= 90) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 5
+                }
+                }
+                else if (count <= 95) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 2
+                }
+                }
+                else {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count
+                }
+                }
+                // console.log(data3)
+                dataList.push(json)
+
+            }
+            }
+            else {
+
+            for (var i = 0; i < data2.length; i++) {
+                var count = 0;
+                var abc = (data2[i].weight / max)
+                count = parseInt(abc) * 100
+
+                //console.log("Name: " + data2[i].name + " Weight: " + count);
+
+                var json = {};
+                if (i == 0) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": 100
+                }
+                }
+                else if (count <= 40) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 20
+                }
+                }
+                else if (count <= 60) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 15
+                }
+                }
+                else if (count <= 80) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 10
+                }
+                }
+                else if (count <= 90) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 5
+                }
+                }
+                else if (count <= 95) {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count + 2
+                }
+                }
+                else {
+                json = {
+                    "name": data2[i].name,
+                    "weight": count
+                }
+                }
+                // console.log(data3)
+                dataList.push(json)
+
+            }
+            }
+            return dataList;
+        }
+    </script>
+    {{#if_eq type 'hashtag'}}
+        {{#if analytics}}
+            {{#each analytics}}
+                {{!-- WORD CLOUD TOP HASHTAGS - CHART --}}
+                {{#if (and _source.other_hashtag _source.other_hashtag.length)}}
+                <script>
+                    analytics_flag = true
+                    var color1 = ["#081121", "#191970", "#4B0082", "#8B4513", "#006400", "#C71585", "#FF1493", "#8A2BE2", "#FF0000", "#708090"];
+                    Highcharts.chart('tag_cloud_popular', {
+                        series: [{
+                            type: 'wordcloud',
+                            data: adjustCloud({{{ toJSON _source.other_hashtag }}}.slice(0,100)),
+                            name: 'Occurrences',
+                            rotation: {
+                            from: -60,
+                            to: 60,
+                            orientations: 0
+                            },
+                            colors: ['#0077A7',
+                            '#000000',
+                            '#5DA8C7',
+                            '#004767',
+                            '#1783AF',
+                            '#023245',
+                            '#005F86'],
+                        }],
+                        chart: {
+                        backgroundColor: "transparent",
+                    },
+                    plotOptions: {
+                                series: {
+                                    animation: false,
+                                }
+                    },
+                    credits: {
+                                    enabled: false
+                            
+                            },
+                        title: {
+                            text: 'HASHTAG WORDCLOUD',
+                        style: {
+                            color: '#343a40'
+                        },
+                    },
+                        });
+                </script>
+                {{else}}
+                <script>
+                    $('.user_chart_wc_hashtag').addClass("hide_this");
+                </script>
+                {{/if}}
+
+                {{!--TOP CONTRIBUTORS - CHART --}}
+                {{#if _source.top_contributors}}
+                    {{#if (and _source.top_contributors.categories _source.top_contributors.categories.length)}}
+                    <script>
+                        analytics_flag = true
+                        var contributors_chart = document.getElementById('contributors_chart');
+                        Highcharts.chart('contributors_chart', {
+                            chart: {
+                                type: 'spline',
+                                animation: {
+                                    onComplete: function () {
+                                        // set the PDF printing trigger when the animation is done
+                                        // to have this working, the phantom-pdf menu in the left must
+                                        // have the wait for printing trigger option selected
+                                        // window.JSREPORT_READY_TO_START = true
+                                    }
+                                },
+                                marginRight: 20,
+                            },
+                            title: {
+                                text: 'TOP CONTRIBUTORS'
+                            },
+                            subtitle: {
+                            },
+                            xAxis: {
+                                categories: {{{ toJSON _source.top_contributors.categories }}}.slice(0,10),
+                                labels: {
+                                    enabled: true,
+                                        rotation: 0,
+                                        useHTML: true,
+                                            allowOverlap: false,
+                                                style: {
+                                        fontSize: '9px',
+                                            fontFamily: 'sans-serif',
+                                                textOverflow: 'wrap',
+                                                whiteSpace: 'break-spaces'
+                                    }
+                                },
+                                },
+                                yAxis: {
+                                    title: {
+                                        enabled: true
+                                    },
+                                    min: 0
+                                },
+                                tooltip: {
+                                },
+                                credits: {
+                                        enabled: false
+                                
+                                },
+
+                                plotOptions: {
+                                    series: {
+                                        animation: false,
+                                        lineWidth: 2.7,
+                                        marker: {
+                                            enabled: true,
+                                            fillColor: '#fff',
+                                            lineWidth: 2.5,
+                                            lineColor: null
+                                        }
+                                    }
+                                },
+
+                                colors: ['#646397'],
+                                    // Define the data points. All series have a dummy year
+                                    // of 1970/71 in order to be compared on the same x axis. Note
+                                    // that in JavaScript, months start at 0 for January, 1 for February etc.
+                                    series: [{
+                                        shadow: {
+                                            enabled: true,
+                                            offsetY: 6,
+                                            offsetX: -1,
+                                            width: 12,
+                                            color: '#646397',
+                                            opacity: 0.05
+                                        },
+                                        color: {
+                                            linearGradient: {
+                                                x1: 0,
+                                                x2: 1,
+                                                y1: 0,
+                                                y2: 0,
+                                            },
+                                            stops: [
+                                                [0, '#646397'],
+                                                [0.5, '#ff0080'],
+                                                [1, '#e69500']
+                                            ],
+                                        },
+                                        pointPlacement: 'on',
+                                        name: 'tweets',
+                                        showInLegend: false,
+                                        data: {{{ toJSON _source.top_contributors.series }}}.slice(0,10)
+                                        }],
+
+                                        responsive: {
+                                    rules: [{
+                                        condition: {
+                                        },
+                                        chartOptions: {
+                                            plotOptions: {
+                                                series: {
+                                                    marker: {
+                                                        radius: 6
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }]
+                                }
+                            });
+                    </script>
+                    {{else}}
+                    <script>
+                        $('.user_chart_contributor').addClass("hide_this")
+                    </script>
+                    {{/if}}
+                {{else}}
+                <script>
+                    $('.user_chart_contributor').addClass("hide_this")
+                </script>
+                {{/if}}
+
+                {{!--TOP LOCATION CHART - CHART --}}
+                {{#if _source.location_chart_falsefalsefalse}}
+                    {{#if (and _source.location_chart _source.location_chart.categories _source.location_chart.categories.length)}}
+                    <script>
+                        analytics_flag = true
+                        Highcharts.chart('location_chart', {
+                            chart: {
+                                type: 'spline',
+                                animation: {
+                                    onComplete: function () {
+                                        // set the PDF printing trigger when the animation is done
+                                        // to have this working, the phantom-pdf menu in the left must
+                                        // have the wait for printing trigger option selected
+                                        // window.JSREPORT_READY_TO_START = true
+                                    }
+                                },
+                                marginRight: 20,
+                            },
+                            title: {
+                                text: 'TOP LOCATIONS'
+                            },
+                            subtitle: {
+                            },
+                            xAxis: {
+                                categories: {{{ toJSON _source.location_chart.categories }}}.slice(0,10),
+                                labels: {
+                                    enabled: true,
+                                        rotation: 0,
+                                            allowOverlap: false,
+                                                style: {
+                                        fontSize: '11px',
+                                            fontFamily: 'sans-serif',
+                                                textOverflow: 'none'
+                                    }
+                                },
+                                },
+                                yAxis: {
+                                    title: {
+                                        enabled: true
+                                    },
+                                    min: 0
+                                },
+                                tooltip: {
+                                },
+                                credits: {
+                                        enabled: false
+                                
+                                },
+
+                                plotOptions: {
+                                    series: {
+                                        animation: false,
+                                        lineWidth: 2.7,
+                                        marker: {
+                                            enabled: true,
+                                            fillColor: '#fff',
+                                            lineWidth: 2.5,
+                                            lineColor: null
+                                        }
+                                    }
+                                },
+
+                                colors: ['#646397'],
+                                    // Define the data points. All series have a dummy year
+                                    // of 1970/71 in order to be compared on the same x axis. Note
+                                    // that in JavaScript, months start at 0 for January, 1 for February etc.
+                                    series: [{
+                                        shadow: {
+                                            enabled: true,
+                                            offsetY: 6,
+                                            offsetX: -1,
+                                            width: 12,
+                                            color: '#646397',
+                                            opacity: 0.05
+                                        },
+                                        color: {
+                                            linearGradient: {
+                                                x1: 0,
+                                                x2: 1,
+                                                y1: 0,
+                                                y2: 0,
+                                            },
+                                            stops: [
+                                                [0, '#646397'],
+                                                [0.5, '#ff0080'],
+                                                [1, '#e69500']
+                                            ],
+                                        },
+                                        pointPlacement: 'on',
+                                        name: 'tweets',
+                                        showInLegend: false,
+                                        data: {{{ toJSON _source.location_chart.series }}}.slice(0,10)
+                                        }],
+
+                                        responsive: {
+                                    rules: [{
+                                        condition: {
+                                        },
+                                        chartOptions: {
+                                            plotOptions: {
+                                                series: {
+                                                    marker: {
+                                                        radius: 6
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }]
+                                }
+                            });
+                    </script>
+                    {{/if}}
+                {{else}}
+                <script>
+                    $('.user_chart_location').addClass("hide_this")
+                </script>
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    {{/if_eq}}
+
+
+    {{#if_eq type 'profile'}}
+        {{#if (and analytcs analytcs.analytics)}}
+            {{!-- WORD CLOUD TOP HASHTAGS - CHART --}}
+            {{#if (and analytcs.analytics.hashtag_cloud analytcs.analytics.hashtag_cloud.length)}}
+            <script>
+                analytics_flag = true;
+                var color1 = ["#081121", "#191970", "#4B0082", "#8B4513", "#006400", "#C71585", "#FF1493", "#8A2BE2", "#FF0000", "#708090"];
+                Highcharts.chart('tag_cloud_popular', {
+                    series: [{
+                        type: 'wordcloud',
+                        data: adjustCloud({{{ toJSON analytcs.analytics.hashtag_cloud }}}.slice(0,100)),
+                        name: 'Occurrences',
+                        rotation: {
+                        from: -60,
+                        to: 60,
+                        orientations: 0
+                        },
+                        colors: ['#0077A7',
+                        '#000000',
+                        '#5DA8C7',
+                        '#004767',
+                        '#1783AF',
+                        '#023245',
+                        '#005F86'],
+                        }],
+                    chart: {
+                    backgroundColor: "transparent",
+                },
+                plotOptions: {
+                            series: {
+                                animation: false,
+                            }
+                },
+                credits: {
+                                enabled: false
+                        
+                        },
+                    title: {
+                        text: 'HASHTAG WORDCLOUD',
+                    style: {
+                        color: '#343a40'
+                    },
+                },
+                    });
+            </script>
+            {{else}}
+            <script>
+                $('.user_chart_wc_hashtag').addClass("hide_this");
+                window.JSREPORT_READY_TO_START = true;
+            </script>
+            {{/if}}
+
+            {{!-- WORD CLOUD TOP COMMENTS - CHART --}}
+            {{#if (and analytcs.analytics.Comment_cloud analytcs.analytics.Comment_cloud.length)}}
+            
+            <script>
+                analytics_flag = true;
+                var color1 = ["#081121", "#191970", "#4B0082", "#8B4513", "#006400", "#C71585", "#FF1493", "#8A2BE2", "#FF0000", "#708090"];
+                Highcharts.chart('comment_cloud_popular', {
+                    series: [{
+                        type: 'wordcloud',
+                        data: adjustCloud({{{ toJSON analytcs.analytics.Comment_cloud }}}.slice(0,100)),
+                        name: 'Occurrences',
+                        rotation: {
+                        from: -60,
+                        to: 60,
+                        orientations: 0
+                        },
+                        colors: ['#0077A7',
+                        '#000000',
+                        '#5DA8C7',
+                        '#004767',
+                        '#1783AF',
+                        '#023245',
+                        '#005F86'],
+                        }],
+                    chart: {
+                    backgroundColor: "transparent",
+                },
+                plotOptions: {
+                            series: {
+                                animation: false,
+                            }
+                },
+                credits: {
+                                enabled: false
+                        
+                        },
+                    title: {
+                        text: 'COMMENTS WORDCLOUD',
+                    style: {
+                        color: '#343a40'
+                    },
+                },
+                    });
+            </script>
+            {{else}}
+            <script>
+                $('.user_chart_wc_comment').addClass("hide_this");
+                window.JSREPORT_READY_TO_START = true;
+            </script>
+            {{/if}}
+
+            {{!--TOP CONTRIBUTORS - CHART --}}
+            {{#if analytcs.analytics.top_commenter}}
+                {{#if (and analytcs.analytics.top_commenter.categories analytcs.analytics.top_commenter.categories.length)}}
+                <script>
+                    analytics_flag = true;
+                    var contributors_chart = document.getElementById('contributors_chart');
+                    Highcharts.chart('contributors_chart', {
+                        chart: {
+                            type: 'spline',
+                            animation: {
+                                onComplete: function () {
+                                    // set the PDF printing trigger when the animation is done
+                                    // to have this working, the phantom-pdf menu in the left must
+                                    // have the wait for printing trigger option selected
+                                    // window.JSREPORT_READY_TO_START = true
+                                }
+                            },
+                            marginRight: 20,
+                        },
+                        title: {
+                            text: 'TOP COMMENTERS'
+                        },
+                        subtitle: {
+                        },
+                        xAxis: {
+                            categories: {{{ toJSON analytcs.analytics.top_commenter.categories }}}.slice(0,10),
+                            labels: {
+                                enabled: true,
+                                    rotation: 0,
+                                        allowOverlap: false,
+                                            style: {
+                                    fontSize: '9px',
+                                        fontFamily: 'sans-serif',
+                                            textOverflow: 'none'
+                                }
+                            },
+                            },
+                            yAxis: {
+                                title: {
+                                    enabled: true
+                                },
+                                min: 0
+                            },
+                            tooltip: {
+                            },
+                            credits: {
+                                    enabled: false
+                            
+                            },
+
+                            plotOptions: {
+                                series: {
+                                    animation: false,
+                                    lineWidth: 2.7,
+                                    marker: {
+                                        enabled: true,
+                                        fillColor: '#fff',
+                                        lineWidth: 2.5,
+                                        lineColor: null
+                                    }
+                                }
+                            },
+
+                            colors: ['#646397'],
+                                // Define the data points. All series have a dummy year
+                                // of 1970/71 in order to be compared on the same x axis. Note
+                                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                                series: [{
+                                    shadow: {
+                                        enabled: true,
+                                        offsetY: 6,
+                                        offsetX: -1,
+                                        width: 12,
+                                        color: '#646397',
+                                        opacity: 0.05
+                                    },
+                                    color: {
+                                        linearGradient: {
+                                            x1: 0,
+                                            x2: 1,
+                                            y1: 0,
+                                            y2: 0,
+                                        },
+                                        stops: [
+                                            [0, '#646397'],
+                                            [0.5, '#ff0080'],
+                                            [1, '#e69500']
+                                        ],
+                                    },
+                                    pointPlacement: 'on',
+                                    name: 'tweets',
+                                    showInLegend: false,
+                                    data: {{{ toJSON analytcs.analytics.top_commenter.series }}}.slice(0,10)
+                                    }],
+
+                                    responsive: {
+                                rules: [{
+                                    condition: {
+                                    },
+                                    chartOptions: {
+                                        plotOptions: {
+                                            series: {
+                                                marker: {
+                                                    radius: 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                }]
+                            }
+                        });
+                </script>
+                {{else}}
+                <script>
+                    $('.user_chart_contributor').addClass("hide_this")
+                </script>
+                {{/if}}
+            {{else}}
+            <script>
+                $('.user_chart_contributor').addClass("hide_this")
+            </script>
+            {{/if}}
+
+            {{!--TOP LOCATION CHART - CHART --}}
+            {{#if analytcs.analytics.location_chart_falsefalsefalse}}
+                {{#if (and analytcs.analytics.location_chart analytcs.analytics.location_chart.categories analytcs.analytics.location_chart.categories.length)}}
+                <script>
+                    analytics_flag = true;
+                    Highcharts.chart('location_chart', {
+                        chart: {
+                            type: 'spline',
+                            animation: {
+                                onComplete: function () {
+                                    // set the PDF printing trigger when the animation is done
+                                    // to have this working, the phantom-pdf menu in the left must
+                                    // have the wait for printing trigger option selected
+                                    // window.JSREPORT_READY_TO_START = true
+                                }
+                            },
+                            marginRight: 20,
+                        },
+                        title: {
+                            text: 'TOP LOCATIONS'
+                        },
+                        subtitle: {
+                        },
+                        xAxis: {
+                            categories: {{{ toJSON analytcs.analytics.location_chart.categories }}}.slice(0,10),
+                            labels: {
+                                enabled: true,
+                                    rotation: 0,
+                                        allowOverlap: false,
+                                            style: {
+                                    fontSize: '11px',
+                                        fontFamily: 'sans-serif',
+                                            textOverflow: 'none'
+                                }
+                            },
+                            },
+                            yAxis: {
+                                title: {
+                                    enabled: true
+                                },
+                                min: 0
+                            },
+                            tooltip: {
+                            },
+                            credits: {
+                                    enabled: false
+                            
+                            },
+
+                            plotOptions: {
+                                series: {
+                                    animation: false,
+                                    lineWidth: 2.7,
+                                    marker: {
+                                        enabled: true,
+                                        fillColor: '#fff',
+                                        lineWidth: 2.5,
+                                        lineColor: null
+                                    }
+                                }
+                            },
+
+                            colors: ['#646397'],
+                                // Define the data points. All series have a dummy year
+                                // of 1970/71 in order to be compared on the same x axis. Note
+                                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                                series: [{
+                                    shadow: {
+                                        enabled: true,
+                                        offsetY: 6,
+                                        offsetX: -1,
+                                        width: 12,
+                                        color: '#646397',
+                                        opacity: 0.05
+                                    },
+                                    color: {
+                                        linearGradient: {
+                                            x1: 0,
+                                            x2: 1,
+                                            y1: 0,
+                                            y2: 0,
+                                        },
+                                        stops: [
+                                            [0, '#646397'],
+                                            [0.5, '#ff0080'],
+                                            [1, '#e69500']
+                                        ],
+                                    },
+                                    pointPlacement: 'on',
+                                    name: 'tweets',
+                                    showInLegend: false,
+                                    data: {{{ toJSON analytcs.analytics.location_chart.series }}}.slice(0,10)
+                                    }],
+
+                                    responsive: {
+                                rules: [{
+                                    condition: {
+                                    },
+                                    chartOptions: {
+                                        plotOptions: {
+                                            series: {
+                                                marker: {
+                                                    radius: 6
+                                                }
+                                            }
+                                        }
+                                    }
+                                }]
+                            }
+                        });
+                </script>
+                {{else}}
+                <script>
+                    $('.user_chart_location').addClass("hide_this")
+                </script>
+                {{/if}}
+            {{else}}
+            <script>
+                $('.user_chart_location').addClass("hide_this")
+            </script>
+            {{/if}}
+        {{/if}}
+    {{/if_eq}}
+
+    {{!--TOP CONTRIBUTORS CHART VISAGE - CHART --}}
+    {{#if country_contributor.categories}}
+        {{#if (and country_contributor.categories country_contributor.categories.length)}}
+        <script>
+            let h = {{{toJSON country_contributor.categories}}}
+            let cont_ = document.querySelector("#contri_contributors")
+            cont_.style.height = (h.length<18?400:22.22*h.length) + 'px'
+
+            Highcharts.chart('contri_contributors', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Contributors Summary - Visage Contacts',
+                    align: 'center'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: {{{toJSON country_contributor.categories}}},
+                    title: {
+                        text: null
+                    },
+                    gridLineWidth: 1,
+                    lineWidth: 0,
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    },
+                    gridLineWidth: 0
+                },
+                tooltip: {
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    series: {
+                            pointWidth: 15,
+                            animation: false
+                        },
+                    bar: {
+                        borderRadius: 4,
+                        dataLabels: {
+                            enabled: true
+                        },
+                        groupPadding: 0.1,
+                    }
+                },
+                legend: {
+                        enabled: false,
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor:
+                        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    data: {{{toJSON country_contributor.series}}}
+                }]
+            });
+        </script>
+        {{else}}
+        <script>
+            $('.user_chart_contri').addClass("hide_this")
+        </script>
+        {{/if}}
+    {{else}}
+    <script>
+        $('.user_chart_contri').addClass("hide_this")
+    </script>
+    {{/if}}
+
+    {{!--TOP FOLLOWERS CHART VISAGE - CHART --}}
+    {{#if country_follower.categories}}
+        {{#if (and country_follower.categories country_follower.categories.length)}}
+        <script>
+            let h1 = {{{toJSON country_follower.categories}}}
+            let cont1_ = document.querySelector("#country_follower")
+            cont1_.style.height = (h1.length<18?400:22.22*h1.length) + 'px'
+
+            Highcharts.chart('country_follower', {
+                chart: {
+                    type: 'bar',
+                },
+                title: {
+                    text: 'Followers Summary - Visage Contacts',
+                    align: 'center'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: {{{toJSON country_follower.categories}}},
+                    title: {
+                        text: null
+                    },
+                    gridLineWidth: 1,
+                    lineWidth: 0,
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    },
+                    gridLineWidth: 0
+                },
+                tooltip: {
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    series: {
+                            pointWidth: 15,
+                            animation: false
+                        },
+                    bar: {
+                        borderRadius: 4,
+                        dataLabels: {
+                            enabled: true
+                        },
+                        groupPadding: 0.1,
+                    }
+                },
+                legend: {
+                        enabled: false,
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor:
+                        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    data: {{{toJSON country_follower.series}}}
+                }]
+            });
+        </script>
+        {{else}}
+        <script>
+            $('.user_chart_contri_followers').remove();
+        </script>
+        {{/if}}
+    {{else}}
+    <script>
+        $('.user_chart_contri_followers').remove();
+    </script>
+    {{/if}}
+
+    {{!--TOP FOLLOWING CHART VISAGE - CHART --}}
+    {{#if country_following.categories}}
+        {{#if (and country_following.categories country_following.categories.length)}}
+        <script>
+            let h2 = {{{toJSON country_following.categories}}}
+            let cont2_ = document.querySelector("#country_following")
+            cont2_.style.height = (h2.length<18?400:22.22*h2.length) + 'px'
+
+            Highcharts.chart('country_following', {
+                chart: {
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Following Summary - Visage Contacts',
+                    align: 'center'
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: {{{toJSON country_following.categories}}},
+                    title: {
+                        text: null
+                    },
+                    gridLineWidth: 1,
+                    lineWidth: 0,
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '',
+                        align: 'high'
+                    },
+                    labels: {
+                        overflow: 'justify'
+                    },
+                    gridLineWidth: 0
+                },
+                tooltip: {
+                    valueSuffix: ' millions'
+                },
+                plotOptions: {
+                    series: {
+                            pointWidth: 15,
+                            animation: false
+                        },
+                    bar: {
+                        borderRadius: 4,
+                        dataLabels: {
+                            enabled: true
+                        },
+                        groupPadding: 0.1,
+                    }
+                },
+                legend: {
+                        enabled: false,
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -40,
+                    y: 80,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor:
+                        Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+                    shadow: true
+                },
+                credits: {
+                    enabled: false
+                },
+                series: [{
+                    data: {{{toJSON country_following.series}}}
+                }]
+            });
+        </script>
+        {{else}}
+        <script>
+            $('.user_chart_contri_following').addClass("hide_this")
+        </script>
+        {{/if}}
+    {{else}}
+    <script>
+        $('.user_chart_contri_following').addClass("hide_this")
+    </script>
+    {{/if}}
+
+    <script>
+        if(!analytics_flag) {
+            $('.analytics-container').addClass("hide_this")
+        }
+    </script>
+
+    <script>
+         // timeline visualization
+        function YMDN(type,data) {
+            //generate all timeline charts against dynamic id param
+            console.log(type+"-data::::::::::::::::::::::::::::::::::::::",data)
+            var text = "";
+            var chartType = "bar";
+            if (type == "year") {
+                text = "Timeline Visualization By Years";
+            } else if (type == "month") {
+                text = "Timeline Visualization By Month";
+            } else if (type == "week") {
+                text = "Timeline Visualization By Week";
+            } else if (type == "day") {
+                text = "Timeline Visualization By Day";
+            } else if(type == "date") {
+                text = "Timeline Visualization By Date"
+            }
+
+
+            var labelSize = null;
+            var chartHeight = null;
+            if(type == "day" || type == "week" || type == "date") {
+                labelSize = 10+"px";
+                chartHeight = null;
+                chartType = "column";
+            }
+
+            var myLineChart = new Highcharts.Chart({
+            chart: {
+                renderTo: type+"_chart",
+                type: chartType,
+                backgroundColor: "transparent",
+                height: chartHeight,
+            },
+            title: {
+                text: text
+            },
+            xAxis: {
+                categories: data.categories,
+                labels: {
+                style: {
+                    fontSize: labelSize
+                }
+                }
+            },
+            yAxis: {
+                title: {
+                text: ""
+                },
+                gridLineColor: "rgba(0,0,0,0.05)"
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false,
+            },
+            // @ts-ignore
+            series: [{
+                name: "videos",
+                data: data.series[0].data,
+                color: "rgb(0, 133, 188)",
+                borderWidth: 0.1,
+                borderColor: "#fff"
+            }],
+            });
+        }
+    </script>
+
+    <script>
+        var addresses = [];
+        var timeline = {
+            year: null,
+            month: null,
+            day: null,
+            week: null,
+            date: null
+        }
+    </script>
+
+    {{#if_eq type 'hashtag'}}
+        {{#if (and analytics analytics.[0] analytics.[0]._source)}}
+            {{#if (and analytics.[0]._source.location_chart analytics._source.location_chart.location_cords analytics._source.location_chart.location_cords.length)}}
+                <script>
+                    addresses = {{{ toJSON analytics.[0]._source.location_chart }}}
+                </script>
+            {{/if}}
+            <script>
+                timeline.year = {{{ toJSON analytics.[0]._source.timeline_by_year }}}
+                timeline.month = {{{ toJSON analytics.[0]._source.timeline_by_month }}}
+                timeline.day = {{{ toJSON analytics.[0]._source.timeline_by_dayname }}}
+                timeline.week = {{{ toJSON analytics.[0]._source.timeline_by_week }}}
+                timeline.date = {{{ toJSON analytics.[0]._source.timeline_by_date }}}
+            </script>
+        {{/if}}
+    {{else}}
+        {{#if (and analytcs analytcs.analytics)}}
+            {{#if (and analytcs.analytics.location_chart analytcs.analytics.location_chart.location_cords analytcs.analytics.location_chart.location_cords.length)}}
+                <script>
+                    addresses = {{{ toJSON analytcs.analytics.location_chart }}}
+                </script>
+            {{/if}}
+            <script>
+                timeline.year = {{{ toJSON analytcs.analytics.timeline_by_year }}}
+                timeline.month = {{{ toJSON analytcs.analytics.timeline_by_month }}}
+                timeline.day = {{{ toJSON analytcs.analytics.timeline_by_dayname }}}
+                timeline.week = {{{ toJSON analytcs.analytics.timeline_by_week }}}
+                timeline.date = {{{ toJSON analytcs.analytics.timeline_by_date }}}
+            </script>
+        {{/if}}
+    {{/if_eq}}
+
+    <script>
+        var map_as_img = [];
+        if (addresses && addresses.categories && addresses.categories.length) {
+            var static_map_index = 0
+            $("#static_map_container").append(`<div class="px-3 w-full" id="static_map_inner-0"></div>`);
+            for(var i=0; i<addresses.location_cords.length; i++) {
+                let formatted_link=addresses.location_cords[i].lat + "," + addresses.location_cords[i].lng;
+                let map_html = `<div class="" style="margin-bottom:25px; margin-left: 0.5rem; margin-right: 0.5rem; float: left;width: calc(50% - 1rem);">
+                <div class="card" style = "border-radius: 10px; box-shadow: 2px 2px 2px 2px rgb(202 202 204 / 40%)!important ;"> 
+                <div class="card-body p-0">
+                <a href="https://www.google.com/maps/search/?api=1&query=${formatted_link}">
+                    <div class="maps-here"
+                        id="map_ad${i}" 
+                        style="height:200px;width:100%;border-radius:5px;">
+                        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid%7Ccolor:red%7C${formatted_link}&size=400x200&key=AIzaSyC1xDv1FcBHfGHlKwS3xyxRP8fXtvaquoo" width="100%" height="100%"/>
+                    </div>
+                </a>
+                    <h6 style="margin-left:15px; margin-top: 10px;
+                    color: black;text-center;"> ${addresses.categories[i] || addresses.location_cords[i].city_name} </h6>
+                    </div>
+                </div>
+                </div>`;
+                $("#static_map_inner-"+static_map_index).append(map_html);
+
+                if(((i+1)%6 == 0)  && ((i+1)!=addresses.categories.length)) {
+                    static_map_index=static_map_index+1
+                    $("#static_map_container").append(`<div style="page-break-after: always;"></div>`);
+                    $("#static_map_container").append(`<img class="static_map_container m-0" src="{#asset header_{{./system}}.png @encoding=dataURI}" style="width:100%;"/>`);
+                    $("#static_map_container").append(`<div class="px-3 mt-5 w-full" id="static_map_inner-${static_map_index}"></div>`);
+                }
+            }
+        } else {
+            $(".static_map_container").addClass('hide_this');
+        }
+    </script>
+
+    <script>
+        if(timeline.year && timeline.year.categories && timeline.year.categories.length) {
+            YMDN("year",timeline.year)
+        }
+        if(timeline.month && timeline.month.categories && timeline.month.categories.length) {
+            YMDN("month",timeline.month)
+        }
+        if(timeline.week && timeline.week.categories && timeline.week.categories.length) {
+            YMDN("week",timeline.week)
+        }
+        if(timeline.date && timeline.date.categories && timeline.date.categories.length) {
+            YMDN("date",timeline.date)
+        }
+
+
+        if(!timeline.year && !timeline.month) {
+            $(".timeline_chart_1").addClass("hide_this")
+        }
+        if(!timeline.week && !timeline.date) {
+            $(".timeline_chart_2").addClass("hide_this")
+        }
+    </script>
+</body>
+</html>

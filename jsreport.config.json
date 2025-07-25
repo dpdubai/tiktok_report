@@ -1,0 +1,64 @@
+{
+  "httpPort": 7700,
+  "allowLocalFilesAccess": true,
+  "store": {
+    "provider": "fs"
+  },
+  "blobStorage": {
+    "provider": "fs"
+  },
+  "reportTimeout": 900000000,
+  "extensions": {
+    "authentication": {
+      "admin": {
+        "username": "admin",
+        "password": "password"
+      },
+      "enabled": false
+    },
+    "sample-template": {
+      "createSamples": false
+    },
+    "scripts": {
+      "strategy": "http-server",
+      "timeout": 900000000
+    },
+    "fs-store": {
+      "syncModifications": false
+    },
+    "pdf-utils": { 
+      "enabled": false 
+    }
+  },
+  "chrome": {
+    "timeout": 900000000
+    },
+  "express": {
+    "renderTimeout": 900000000
+  },
+  "scripts": {
+    "allowedModules": "*",
+    "timeout": 900000000
+  },
+  "templatingEngines": {
+    "numberOfWorkers": 10,
+    "strategy": "http-server",
+    "timeout": 900000000
+  },
+  "logger": {
+    "console": {
+      "transport": "console",
+      "level": "debug"
+    },
+    "file": {
+      "transport": "file",
+      "level": "info",
+      "filename": "logs/reporter.log"
+    },
+    "error": {
+      "transport": "file",
+      "level": "error",
+      "filename": "logs/error.log"
+    }
+  }
+}

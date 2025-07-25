@@ -1,0 +1,17 @@
+{
+    "shortid": "YES2q3_NkL",
+    "name": "watermark",
+    "recipe": "chrome-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1669190132711
+    },
+    "modificationDate": {
+        "$$date": 1669883956391
+    },
+    "_id": "bmgOZov6mXleXPin",
+    "$entitySet": "templates"
+}

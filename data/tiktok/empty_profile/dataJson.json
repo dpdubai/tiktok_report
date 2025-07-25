@@ -1,0 +1,97 @@
+{
+    "basic_data": {
+        "name": "Lishay",
+        "profile": "https://www.tiktok.com/@alishbahanjum",
+        "pic": "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/6150dd7b99101a0e2c03a9ed8275ff63~c5_1080x1080.webp?x-expires=1692946800&x-signature=qSdzVW%2FSFnVjajaO04Jjba5cfjw%3D",
+        "username": "93441120747028480",
+        "status_count": 4322,
+        "friends_count": 0,
+        "followers_count": 0
+    },
+    "anaToPro": [],
+    "about": {
+        "username": "alishbahanjum",
+        "name": "Lishay",
+        "id": "93441120747028480",
+        "desc": "🌸Just an ordinary girl 🌸\nUse #DuetWithAlishbah",
+        "unique_id": "alishbahanjum",
+        "likes": 525593787,
+        "email_address": ["abcdelksj@gmail.com","aslkdjflsjli@gkjdf.com"],
+        "bio_link": "https://nfluencerr.com/Alishbah.Anjum",
+        "other_link": ["https://alksdjfldsk.com","https://fefsefsdfsd.com","https://fdfsss.com"],
+        "following_count": 33,
+        "video_count": 4322,
+        "follower_count": 17142565,
+        "profile_image": "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/6150dd7b99101a0e2c03a9ed8275ff63~c5_1080x1080.webp?x-expires=1692946800&x-signature=qSdzVW%2FSFnVjajaO04Jjba5cfjw%3D",
+        "social_accounts": [
+            {
+                "id": "UCmZ9tAdjSTWoloF8YGofoPA",
+                "title": "Alishbah Anjum",
+                "platform": "Youtube Channel",
+                "link": "https://www.youtube.com/channel/UCmZ9tAdjSTWoloF8YGofoPA"
+            }
+        ],
+        "sec_uid": "MS4wLjABAAAAUmq6QuwvbqCeIVw6XWtFavqFESV-DENmyDXviBm44E0Q2_fzS8jl5zHyZoN9GA_h",
+        "phone_number": ""
+    },
+    "followers": [],
+    "posts": {
+        "took": 70,
+        "timed_out": false,
+        "_shards": {
+            "total": 20,
+            "successful": 20,
+            "skipped": 0,
+            "failed": 0
+        },
+        "hits": {
+            "total": 200,
+            "max_score": 5.571611,
+            "hits": []
+        }
+    },
+    "follows": [],
+    "visagecontactvisibility": true,
+    "user_contact": true,
+    "analytcs": {
+        "screen_name": "alishbahanjum",
+        "user_id": "93441120747028480",
+        "analytics": {
+            "top_commenter": {
+                "categories": [],
+                "series": []
+            },
+            "hashtag_cloud": [],
+            "Comment_cloud": [],
+            "location_chart": {
+                "categories": [],
+                "series": [],
+                "unique_id_list": []
+            }
+        }
+    },
+    "contributors": [],
+    "country_contributor": {
+        "categories": [
+        ],
+        "series": []
+    },
+    "country_follower": {
+        "categories": [],
+        "series": []
+    },
+    "country_following": {
+        "categories": [],
+        "series": []
+    },
+    "currentseed": "93441120747028480",
+    "report_type": "tiktok",
+    "type": "profile",
+    "system": "osint",
+    "contactemail": "",
+    "contactphone": "",
+    "allcomment_json": [],
+    "allobservation_json": [],
+    "allrecomendation_json": [],
+    "imagecommmentobject": ""
+}
