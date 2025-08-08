@@ -2,6 +2,14 @@ function toJSON(data) {
     return JSON.stringify(data);
 }
 
+function proxify(src) {
+    var new_src='https://dubai.osintcenter.org/r=image_api?url=';
+    if(src) {
+        new_src = new_src + encodeURIComponent(src);
+    }
+
+    return new_src
+}
 
 Handlebars.registerHelper({
     and() {
@@ -27,7 +35,8 @@ Handlebars.registerHelper('resolveImg', function(a, opts) {
       let arr = a.split('~');
       a = arr[0] + "~" + arr.slice(-1);
     }
-    return `https://twiimag.osintcenter.org/get_twitter_image_1?url=${encodeURIComponent(a)}`;
+    let finalUrl = proxify(a);
+    return finalUrl;
 });
 
 Handlebars.registerHelper('parse_int', function(a){
@@ -270,7 +279,8 @@ Handlebars.registerHelper('genUrl', function(number){
 
     if(flag && flag.i) {
         // return new Handlebars.SafeString('https://ipdata.co/flags/'+flag.i+'.png')
-        return new Handlebars.SafeString('https://www.worldatlas.com/r/w40/img/flag/'+flag.i+'-flag.jpg')
+        let finalUrl = proxify('https://www.worldatlas.com/r/w40/img/flag/'+flag.i+'-flag.jpg');
+        return new Handlebars.SafeString(finalUrl)
     } else {
         return new Handlebars.SafeString('')
     }

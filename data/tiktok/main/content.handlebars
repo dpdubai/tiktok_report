@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" defer>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;300;400;500&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@300;400;500;700;900&display=swap" 
-    rel="stylesheet">    
     <title>TikTok Report</title>
     <style>
+        {#asset fonts.css @encoding=utf8}
+        {#asset bootstrap-icons.css @encoding=utf8}
         {#asset bootstrap.css @encoding=utf8}
         * {
             margin: 0;
@@ -993,13 +989,12 @@
         
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts.js" integrity="sha512-4vR+i8ttbNS8jZFKX9/5NS7/1h0GcJChrhguf3ypa3Vd3AdwncH1Yt6zB+Z+sVL1KVq3tuRAgTJnttWcb75FTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts-3d.min.js" integrity="sha512-Cs3Zua7q0Wulkiw2OVJfchAy6SSJVfcBAtNwJ+GKhauugHzrisS4FhMRArNm54TUPQiCqGR/dS8MBHe/IGtABw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/highcharts-more.min.js" integrity="sha512-S3pQ5pL4+s/H/v1gQtD8wKFpW+itPKs6HlvlW9hqwhR52y+FJKzmi7SNKhH7I0qMe5cPeWunRjV1gtNcjFKMYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/modules/solid-gauge.min.js" integrity="sha512-Z+0MjRfNOoXgoPnIrWr27ZD4askEkClsOmVXymR+dmOx+dnRN4cis9SU12QbasBWg+CaEa1LG0oCB1L3sJrShg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.0.0/modules/wordcloud.min.js" integrity="sha512-Bwz7wJZrw2SfhdII9jYSp/KK5uKAC57FcwQSP5AMdSBVRRfE6ySZf5695DHNrBiZxteDmxKW8tIfdP1viM86+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{#asset assets/jquery.min.js  @encoding=link}"></script>
+    <script src="{#asset assets/highcharts.js  @encoding=link}"></script>
+    <script src="{#asset assets/highcharts-3d.min.js  @encoding=link}"></script>
+    <script src="{#asset assets/highcharts-more.min.js  @encoding=link}"></script>
+    <script src="{#asset assets/solid-gauge.min.js  @encoding=link}"></script>
+    <script src="{#asset assets/wordcloud.min.js  @encoding=link}"></script>
     <script>var analytics_flag = false;</script>
 
     <script>
@@ -1123,6 +1118,7 @@
             return dataList;
         }
     </script>
+    
     {{#if_eq type 'hashtag'}}
         {{#if analytics}}
             {{#each analytics}}
@@ -2156,6 +2152,7 @@
             $("#static_map_container").append(`<div class="px-3 w-full" id="static_map_inner-0"></div>`);
             for(var i=0; i<addresses.location_cords.length; i++) {
                 let formatted_link=addresses.location_cords[i].lat + "," + addresses.location_cords[i].lng;
+                let map_image = "https://dubai.osintcenter.org/r=image_api?url="+encodeURIComponent(`https://maps.googleapis.com/maps/api/staticmap?markers=size:mid%7Ccolor:red%7C${formatted_link}&size=400x200&key=AIzaSyC1xDv1FcBHfGHlKwS3xyxRP8fXtvaquoo`);
                 let map_html = `<div class="" style="margin-bottom:25px; margin-left: 0.5rem; margin-right: 0.5rem; float: left;width: calc(50% - 1rem);">
                 <div class="card" style = "border-radius: 10px; box-shadow: 2px 2px 2px 2px rgb(202 202 204 / 40%)!important ;"> 
                 <div class="card-body p-0">
@@ -2163,7 +2160,7 @@
                     <div class="maps-here"
                         id="map_ad${i}" 
                         style="height:200px;width:100%;border-radius:5px;">
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?markers=size:mid%7Ccolor:red%7C${formatted_link}&size=400x200&key=AIzaSyC1xDv1FcBHfGHlKwS3xyxRP8fXtvaquoo" width="100%" height="100%"/>
+                        <img src="${map_image}" width="100%" height="100%"/>
                     </div>
                 </a>
                     <h6 style="margin-left:15px; margin-top: 10px;
