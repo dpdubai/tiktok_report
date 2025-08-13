@@ -2152,7 +2152,7 @@
             $("#static_map_container").append(`<div class="px-3 w-full" id="static_map_inner-0"></div>`);
             for(var i=0; i<addresses.location_cords.length; i++) {
                 let formatted_link=addresses.location_cords[i].lat + "," + addresses.location_cords[i].lng;
-                let map_image = "https://dubai.osintcenter.org/r=image_api?url="+encodeURIComponent(`https://maps.googleapis.com/maps/api/staticmap?markers=size:mid%7Ccolor:red%7C${formatted_link}&size=400x200&key=AIzaSyC1xDv1FcBHfGHlKwS3xyxRP8fXtvaquoo`);
+                let map_image = "https://dubai.osintcenter.org/image_api?url="+encodeURIComponent(`https://maps.googleapis.com/maps/api/staticmap?markers=size:mid%7Ccolor:red%7C${formatted_link}&size=400x200&key=AIzaSyC1xDv1FcBHfGHlKwS3xyxRP8fXtvaquoo`);
                 let map_html = `<div class="" style="margin-bottom:25px; margin-left: 0.5rem; margin-right: 0.5rem; float: left;width: calc(50% - 1rem);">
                 <div class="card" style = "border-radius: 10px; box-shadow: 2px 2px 2px 2px rgb(202 202 204 / 40%)!important ;"> 
                 <div class="card-body p-0">

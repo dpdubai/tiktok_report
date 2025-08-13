@@ -2,13 +2,13 @@ function toJSON(data) {
     return JSON.stringify(data);
 }
 
-function proxify(src) {
-    var new_src='https://dubai.osintcenter.org/r=image_api?url=';
+function proxify(src,path='image_api') {
+    var new_src='https://dubai.osintcenter.org/'+path+'?url=';
     if(src) {
         new_src = new_src + encodeURIComponent(src);
     }
 
-    return new_src
+    return new_src;
 }
 
 Handlebars.registerHelper({
@@ -31,9 +31,10 @@ Handlebars.registerHelper('resolveImg', function(a, opts) {
         return a;
     }
     else {
-      if(!a.includes('~')) return a;
-      let arr = a.split('~');
-      a = arr[0] + "~" + arr.slice(-1);
+      if(a.includes('~')) {
+        let arr = a.split('~');
+        a = arr[0] + "~" + arr.slice(-1);
+      }
     }
     let finalUrl = proxify(a);
     return finalUrl;
@@ -279,7 +280,7 @@ Handlebars.registerHelper('genUrl', function(number){
 
     if(flag && flag.i) {
         // return new Handlebars.SafeString('https://ipdata.co/flags/'+flag.i+'.png')
-        let finalUrl = proxify('https://www.worldatlas.com/r/w40/img/flag/'+flag.i+'-flag.jpg');
+        let finalUrl = proxify('https://www.worldatlas.com/r/w40/img/flag/'+flag.i+'-flag.jpg','flag_api');
         return new Handlebars.SafeString(finalUrl)
     } else {
         return new Handlebars.SafeString('')
